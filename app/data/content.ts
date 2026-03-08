@@ -10,7 +10,7 @@ A [polymath](https://en.wikipedia.org/wiki/Polymath) who bridges technical archi
 ## Experience
 
 ### Resonate (YC W26)
-**Founding Software Engineer**
+**Founding Software Engineer, San Francisco, CA**
 *February 2026 - Present*
 
 As an early software engineer bridging product strategy and technical execution, I am driving the development of an AI-native messaging platform from zero to one.
@@ -27,17 +27,15 @@ Transitioning into this founding-level role has been an incredibly rewarding nex
 **Founder in Residence, Bengaluru**
 [https://www.joinef.com/](https://www.joinef.com/)
 
-As a Founder in Residence at Entrepreneurs First (EF), a premier global talent investor and startup accelerator known for backing exceptional individuals to build transformative companies from scratch, I am fully immersed in designing and developing cutting-edge Agentic AI systems.
+As a Founder in Residence at Entrepreneurs First (EF), a premier global talent investor and startup accelerator, I was immersed in designing and developing cutting-edge Agentic AI systems.
 
-Actively building autonomous, goal-driven AI agents that shift from suggestion-based tools to proactive execution, enabling seamless human-AI collaboration and redefining task automation, decision-making, and operations.
+Built autonomous, goal-driven AI agents that shifted from suggestion-based tools to proactive execution, enabling seamless human-AI collaboration and redefining task automation and decision-making.
 
-Driving a bold vision for the future of computing: making traditional web browsing obsolete, turning personal data into the primary interface (your "homepage"), and empowering agentic systems to independently handle complex responsibilities.
+Drove a bold vision for the future of computing: making traditional web browsing obsolete, turning personal data into the primary interface, and empowering agentic systems to independently handle complex responsibilities.
 
-Hustling full-time in a high-intensity, ambition-fueled environment surrounded by world-class cofounders, mentors, and resources - leveraging EF's structured support (including coaching, community, and potential funding pathways) to explore, validate, and iterate ideas at pace.
+Operated in a high-intensity environment surrounded by world-class cofounders, mentors, and resources, using EF's structured support to explore, validate, and iterate on ideas at pace.
 
-Positioning myself at the forefront of a paradigm shift in AI, tackling hard technical and conceptual challenges to create meaningful, scalable impact in the emerging agentic era.
-
-This role highlights my entrepreneurial drive, deep technical expertise in AI systems, and commitment to pioneering the next wave of intelligent, autonomous technology.
+Positioned at the forefront of a paradigm shift in AI, tackling hard technical and conceptual challenges to create meaningful, scalable impact in the emerging agentic era.
 
 ### Google Summer of Code 2025
 **Emory University School of Medicine, Atlanta, USA**

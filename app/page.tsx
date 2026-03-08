@@ -230,12 +230,11 @@ export default function Home() {
                   link="https://www.joinef.com/"
                 >
                   <div className="space-y-2">
-                    <p>As a Founder in Residence at Entrepreneurs First (EF), a premier global talent investor and startup accelerator known for backing exceptional individuals to build transformative companies from scratch, I am fully immersed in designing and developing cutting-edge Agentic AI systems.</p>
-                    <p>Actively building autonomous, goal-driven AI agents that shift from suggestion-based tools to proactive execution, enabling seamless human-AI collaboration and redefining task automation, decision-making, and operations.</p>
-                    <p>Driving a bold vision for the future of computing: making traditional web browsing obsolete, turning personal data into the primary interface (your "homepage"), and empowering agentic systems to independently handle complex responsibilities.</p>
-                    <p>Hustling full-time in a high-intensity, ambition-fueled environment surrounded by world-class cofounders, mentors, and resources - leveraging EF's structured support (including coaching, community, and potential funding pathways) to explore, validate, and iterate ideas at pace.</p>
-                    <p>Positioning myself at the forefront of a paradigm shift in AI, tackling hard technical and conceptual challenges to create meaningful, scalable impact in the emerging agentic era.</p>
-                    <p>This role highlights my entrepreneurial drive, deep technical expertise in AI systems, and commitment to pioneering the next wave of intelligent, autonomous technology.</p>
+                    <p>As a Founder in Residence at Entrepreneurs First (EF), a premier global talent investor and startup accelerator, I was immersed in designing and developing cutting-edge Agentic AI systems.</p>
+                    <p>Built autonomous, goal-driven AI agents that shifted from suggestion-based tools to proactive execution, enabling seamless human-AI collaboration and redefining task automation and decision-making.</p>
+                    <p>Drove a bold vision for the future of computing: making traditional web browsing obsolete, turning personal data into the primary interface, and empowering agentic systems to independently handle complex responsibilities.</p>
+                    <p>Operated in a high-intensity environment surrounded by world-class cofounders, mentors, and resources, using EF's structured support to explore, validate, and iterate on ideas at pace.</p>
+                    <p>Positioned at the forefront of a paradigm shift in AI, tackling hard technical and conceptual challenges to create meaningful, scalable impact in the emerging agentic era.</p>
                   </div>
                 </ExperienceItem>
 
