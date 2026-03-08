@@ -12,7 +12,7 @@ import { QRCodeSVG } from "qrcode.react";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { NeuralNetworkSim } from "./components/NeuralNetworkSim";
+
 
 import { getMarkdownContent } from "./data/content";
 
@@ -51,7 +51,6 @@ export default function Home() {
 
   const markdownContent = getMarkdownContent(time);
 
-  const [showEasterEgg, setShowEasterEgg] = useState(false);
   const [isLofiPlaying, setIsLofiPlaying] = useState(false);
   const [lofiVolume, setLofiVolume] = useState(1);
   const lofiRef = useRef<HTMLAudioElement | null>(null);
@@ -86,59 +85,11 @@ export default function Home() {
     setIsLofiPlaying(!isLofiPlaying);
   };
 
-  const starPositions = useMemo(() => {
-    return [...Array(50)].map(() => ({
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      duration: 2 + Math.random() * 3,
-      delay: Math.random() * 5,
-    }));
-  }, []);
+
 
   return (
     <div className={`relative flex min-h-screen flex-col items-center bg-white dark:bg-black px-3 pt-16 text-black dark:text-white selection:bg-black dark:selection:bg-white selection:text-white dark:selection:text-black pb-32 sm:px-4 sm:pt-24 sm:pb-40 overflow-x-hidden transition-colors duration-300`}>
-      {/* Easter Egg Effects */}
-      <AnimatePresence>
-        {showEasterEgg && (
-          <>
-            {/* Bluish Aura Edge Effect */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[100] pointer-events-none shadow-[inset_0_0_150px_rgba(29,78,216,0.5)] dark:shadow-[inset_0_0_150px_rgba(59,130,246,0.4)] transition-opacity duration-1000"
-            />
-            {/* Twinkling Stars Background */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
-            >
-              {starPositions.map((pos, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute h-[2px] w-[2px] bg-blue-500 dark:bg-white rounded-full shadow-[0_0_4px_rgba(59,130,246,0.8)] dark:shadow-[0_0_3px_white]"
-                  style={{
-                    top: pos.top,
-                    left: pos.left,
-                  }}
-                  animate={{
-                    opacity: [0.2, 1, 0.2],
-                    scale: [0.8, 1.2, 0.8],
-                  }}
-                  transition={{
-                    duration: pos.duration,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: pos.delay,
-                  }}
-                />
-              ))}
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+
       {/* Theme Toggle in Top Right */}
       <div className="fixed top-6 right-6 z-50">
         <ThemeToggle />
@@ -172,24 +123,17 @@ export default function Home() {
             transition={{ duration: 0.35, ease: "easeOut" }}
             className="flex w-full max-w-2xl flex-col items-center text-center"
           >
-            {/* Profile Image - Easter Egg Trigger */}
-            <button
-              onClick={() => setShowEasterEgg(!showEasterEgg)}
-              className="group relative mb-2 h-40 w-40 grayscale filter sm:h-56 sm:w-56 overflow-hidden cursor-pointer transition-all duration-500 hover:grayscale-0 active:scale-95"
-              aria-label="Toggle Aura Mode"
-            >
+            {/* Profile Image */}
+            <div className="relative mb-2 h-40 w-40 sm:h-56 sm:w-56 overflow-hidden">
               <Image
-                src="/me.png" // User's photo
+                src="/me.png"
                 alt="Profile"
                 fill
-                className={`object-contain transition-all duration-700 ${showEasterEgg ? 'grayscale-0 scale-105' : 'grayscale'}`}
+                className="object-contain grayscale"
                 priority
               />
               <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white via-white/60 to-transparent dark:from-black dark:via-black/60 backdrop-blur-[1px]" />
-
-              {/* Subtle Glow on Hover */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[inset_0_0_20px_rgba(59,130,246,0.3)] rounded-full pointer-events-none" />
-            </button>
+            </div>
 
             {/* Hero Text */}
             <h1 className="mb-4 text-5xl font-bold tracking-tight sm:text-7xl">
@@ -252,14 +196,33 @@ export default function Home() {
               </p>
             </div>
 
-            <NeuralNetworkSim />
+
 
             {/* Experience Section */}
-            <div className="mb-16 w-full text-left">
+            <div className="mt-6 mb-16 w-full text-left">
               <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
                 Experience
               </h2>
               <div className="space-y-12">
+                <ExperienceItem
+                  title="Resonate (YC W26)"
+                  role="Founding Software Engineer, San Francisco, CA"
+                  collapsible={true}
+                  link="https://www.ycombinator.com/companies/resonate"
+                >
+                  <div className="space-y-2">
+                    <p>As an early software engineer bridging product strategy and technical execution, I am driving the development of an AI-native messaging platform from zero to one.</p>
+                    <p>Key focus areas include:</p>
+                    <ul className="list-disc list-inside space-y-1 pl-2">
+                      <li>Architecting and building core product features for an AI-focused messaging ecosystem.</li>
+                      <li>Developing real-time systems and innovating ways to transform and present information dynamically within messaging interfaces.</li>
+                      <li>Collaborating within a lean team to build robust tools for AI-driven communication.</li>
+                      <li>Operating top-to-bottom, from product conception to complete software development.</li>
+                    </ul>
+                    <p>Transitioning into this founding-level role has been an incredibly rewarding next step following my previous startup ventures.</p>
+                  </div>
+                </ExperienceItem>
+
                 <ExperienceItem
                   title="Entrepreneur First"
                   role="Founder in Residence, Bengaluru"

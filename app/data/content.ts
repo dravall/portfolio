@@ -9,6 +9,20 @@ A [polymath](https://en.wikipedia.org/wiki/Polymath) who bridges technical archi
 
 ## Experience
 
+### Resonate (YC W26)
+**Founding Software Engineer**
+*February 2026 - Present*
+
+As an early software engineer bridging product strategy and technical execution, I am driving the development of an AI-native messaging platform from zero to one.
+
+Key focus areas include:
+- Architecting and building core product features for an AI-focused messaging ecosystem.
+- Developing real-time systems and innovating ways to transform and present information dynamically within messaging interfaces.
+- Collaborating within a lean team to build robust tools for AI-driven communication.
+- Operating top-to-bottom, from product conception to complete software development.
+
+Transitioning into this founding-level role has been an incredibly rewarding next step following my previous startup ventures.
+
 ### Entrepreneur First
 **Founder in Residence, Bengaluru**
 [https://www.joinef.com/](https://www.joinef.com/)
