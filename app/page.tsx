@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { Github, Linkedin, Youtube, Calendar, Bot, User, QrCode, X, ArrowRight, Music, Pause, ChevronDown, ChevronUp } from "lucide-react";
+import { Github, Linkedin, Youtube, Calendar, Bot, User, QrCode, X, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { ExperienceItem } from "./components/ExperienceItem";
 import { GithubGraph } from "./components/GithubGraph";
 import { TechStack } from "./components/TechStack";
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useTheme } from "next-themes";
 import { QRCodeSVG } from "qrcode.react";
 import { ThemeToggle } from "./components/ThemeToggle";
@@ -52,39 +52,6 @@ export default function Home() {
   const markdownContent = getMarkdownContent(time);
 
   const [libraryExpanded, setLibraryExpanded] = useState(false);
-  const [isLofiPlaying, setIsLofiPlaying] = useState(false);
-  const [lofiVolume, setLofiVolume] = useState(1);
-  const lofiRef = useRef<HTMLAudioElement | null>(null);
-
-  useEffect(() => {
-    if (lofiRef.current) {
-      lofiRef.current.volume = lofiVolume;
-    }
-  }, [lofiVolume]);
-
-  useEffect(() => {
-    return () => {
-      if (lofiRef.current) {
-        lofiRef.current.pause();
-        lofiRef.current = null;
-      }
-    };
-  }, []);
-
-  const toggleLofi = () => {
-    if (!lofiRef.current) {
-      lofiRef.current = new Audio("/lofi.mp3");
-      lofiRef.current.loop = true;
-      lofiRef.current.volume = lofiVolume;
-    }
-
-    if (isLofiPlaying) {
-      lofiRef.current.pause();
-    } else {
-      lofiRef.current.play().catch(e => console.error("Lofi play failed:", e));
-    }
-    setIsLofiPlaying(!isLofiPlaying);
-  };
 
 
 
@@ -153,38 +120,6 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wider sm:text-xs">IST</span>
                 </div>
 
-                <span className="text-gray-300 dark:text-gray-700">•</span>
-
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold uppercase tracking-tight text-gray-400">lofi</span>
-                  <button
-                    onClick={toggleLofi}
-                    className="flex h-5 w-5 items-center justify-center rounded-full transition-all hover:bg-gray-100 dark:hover:bg-zinc-800 text-gray-400 hover:text-black dark:hover:text-white"
-                    aria-label={isLofiPlaying ? "Pause Lofi" : "Play Lofi"}
-                  >
-                    {isLofiPlaying ? <Pause size={10} fill="currentColor" /> : <Music size={10} />}
-                  </button>
-                  <AnimatePresence>
-                    {isLofiPlaying && (
-                      <motion.div
-                        initial={{ width: 0, opacity: 0 }}
-                        animate={{ width: 40, opacity: 1 }}
-                        exit={{ width: 0, opacity: 0 }}
-                        className="flex h-5 items-center overflow-hidden"
-                      >
-                        <input
-                          type="range"
-                          min="0"
-                          max="1"
-                          step="0.01"
-                          value={lofiVolume}
-                          onChange={(e) => setLofiVolume(parseFloat(e.target.value))}
-                          className="h-[2px] w-8 cursor-pointer appearance-none rounded-full bg-gray-200 dark:bg-zinc-800 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-2 [&::-webkit-slider-thumb]:w-2 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gray-400 dark:[&::-webkit-slider-thumb]:bg-zinc-500 hover:[&::-webkit-slider-thumb]:bg-black dark:hover:[&::-webkit-slider-thumb]:bg-white [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:h-2 [&::-moz-range-thumb]:w-2 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-gray-400 dark:[&::-moz-range-thumb]:bg-zinc-500 hover:[&::-moz-range-thumb]:bg-black dark:hover:[&::-moz-range-thumb]:bg-white transition-all"
-                        />
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
               </div>
             </div>
 
@@ -337,44 +272,6 @@ export default function Home() {
               <GithubGraph />
             </div>
 
-            {/* Research Publications Section */}
-            <div className="mb-16 w-full text-left">
-              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
-                Research Publications
-              </h2>
-              <div className="space-y-12">
-                <ExperienceItem
-                  title="Cross-Compatible Encryption Adapter for Securing Legacy Modbus Devices"
-                  role=""
-                  collapsible={true}
-                  collapsedHeight="max-h-40"
-                >
-                  <div className="space-y-4">
-                    <div className="space-y-1">
-                      <p className="text-sm text-gray-400 dark:text-gray-500 font-medium">
-                        2025 17th International Conference on COMmunication Systems and NETworks (COMSNETS)
-                      </p>
-                      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
-                        <p className="text-gray-600 dark:text-gray-400">Authors: Aditya Patil; T. S. Sreeram</p>
-                        <a
-                          href="https://doi.org/10.1109/COMSNETS63942.2025.10885597"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-xs font-medium text-black dark:text-white underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300"
-                        >
-                          View Publication
-                        </a>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 font-bold">Abstract</p>
-                      <p className="text-gray-600 dark:text-gray-400">Supervisory Control and Data Acquisition systems are the backbone of managing critical infrastructure in modern industrial control systems, spanning sectors from power generation to logistics. However, these systems face significant challenges due to threats from malicious actors. The Modbus protocol, despite its known lack of security features, is still used in many industries managing critical infrastructure due to the high cost of replacing existing systems. As a result, these legacy systems remain vulnerable to potentially damaging threats. This paper proposes an adapter device for enhancing the security of the Modbus protocol without replacing devices in legacy systems. The proposed adapter is cost-efficient, provides cross-platform support, and is easy to install, update, and maintain.</p>
-                    </div>
-                  </div>
-                </ExperienceItem>
-              </div>
-            </div>
-
             {/* Tech Stack Section */}
             <div className="mb-16 w-full text-left">
               <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
@@ -434,31 +331,73 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Research Publications Section */}
+            <div className="mb-16 w-full text-left">
+              <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
+                Research Publications
+              </h2>
+              <div className="space-y-12">
+                <ExperienceItem
+                  title="Cross-Compatible Encryption Adapter for Securing Legacy Modbus Devices"
+                  role=""
+                  collapsible={true}
+                  collapsedHeight="max-h-40"
+                >
+                  <div className="space-y-4">
+                    <div className="space-y-1">
+                      <p className="text-sm text-gray-400 dark:text-gray-500 font-medium">
+                        2025 17th International Conference on COMmunication Systems and NETworks (COMSNETS)
+                      </p>
+                      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
+                        <p className="text-gray-600 dark:text-gray-400">Authors: Aditya Patil; T. S. Sreeram</p>
+                        <a
+                          href="https://doi.org/10.1109/COMSNETS63942.2025.10885597"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-xs font-medium text-black dark:text-white underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300"
+                        >
+                          View Publication
+                        </a>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-xs uppercase tracking-wider text-gray-400 dark:text-gray-500 font-bold">Abstract</p>
+                      <p className="text-gray-600 dark:text-gray-400">Supervisory Control and Data Acquisition systems are the backbone of managing critical infrastructure in modern industrial control systems, spanning sectors from power generation to logistics. However, these systems face significant challenges due to threats from malicious actors. The Modbus protocol, despite its known lack of security features, is still used in many industries managing critical infrastructure due to the high cost of replacing existing systems. As a result, these legacy systems remain vulnerable to potentially damaging threats. This paper proposes an adapter device for enhancing the security of the Modbus protocol without replacing devices in legacy systems. The proposed adapter is cost-efficient, provides cross-platform support, and is easy to install, update, and maintain.</p>
+                    </div>
+                  </div>
+                </ExperienceItem>
+              </div>
+            </div>
+
             {/* Videos Section */}
             <div className="mb-16 w-full text-left">
               <h2 className="mb-6 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">
                 Explainer Videos
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
-                here is how i explain complex systems on my {" "}
-                <a
-                  href="https://www.youtube.com/@theracecondition"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black dark:text-white underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300"
-                >
-                  youtube channel
-                </a>
-                {" "} <br /> <br /> watch me build {" "}
-                <a
-                  href="https://www.youtube.com/watch?v=m84tBP_4DWE"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-black dark:text-white underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300"
-                >
-                  spotify system design
-                </a>
-              </p>
+              <div className="space-y-3 text-lg text-gray-600 dark:text-gray-400">
+                <p>
+                  here is how i explain complex systems on my{" "}
+                  <a
+                    href="https://www.youtube.com/@theracecondition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black dark:text-white underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300"
+                  >
+                    youtube channel
+                  </a>
+                </p>
+                <p>
+                  watch me build{" "}
+                  <a
+                    href="https://www.youtube.com/watch?v=m84tBP_4DWE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black dark:text-white underline underline-offset-4 hover:text-gray-600 dark:hover:text-gray-300"
+                  >
+                    spotify system design
+                  </a>
+                </p>
+              </div>
             </div>
 
             {/* Writings & Blogs Section */}
