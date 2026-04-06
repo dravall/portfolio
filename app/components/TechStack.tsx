@@ -8,11 +8,12 @@ const categories = [
     {
         name: "Languages",
         skills: [
-            { name: "Go", slug: "go" },
-            { name: "Python", slug: "python" },
-            { name: "TypeScript", slug: "typescript" },
             { name: "JavaScript", slug: "javascript" },
-            { name: "C++", slug: "cplusplus" },
+            { name: "TypeScript", slug: "typescript" },
+            { name: "Python", slug: "python" },
+            { name: "Java", slug: "java" },
+            { name: "PHP", slug: "php" },
+            { name: "SQL", slug: "postgresql" },
         ]
     },
     {
@@ -20,40 +21,41 @@ const categories = [
         skills: [
             { name: "React", slug: "react" },
             { name: "Next.js", slug: "nextdotjs" },
+            { name: "Angular", slug: "angular" },
             { name: "Tailwind CSS", slug: "tailwindcss" },
             { name: "Shadcn UI", slug: "shadcnui" },
-            { name: "Framer Motion", slug: "framer" },
         ]
     },
     {
         name: "Backend & DB",
         skills: [
-            { name: "FastAPI", slug: "fastapi" },
             { name: "Node.js", slug: "nodedotjs" },
-            { name: "PostgreSQL", slug: "postgresql" },
+            { name: "Express.js", slug: "express" },
+            { name: "Bun", slug: "bun" },
             { name: "MongoDB", slug: "mongodb" },
-            { name: "Redis", slug: "redis" },
-            { name: "FireBase", slug: "firebase" },
+            { name: "PostgreSQL", slug: "postgresql" },
+            { name: "MySQL", slug: "mysql" },
+            { name: "Prisma", slug: "prisma" },
+            { name: "GraphQL", slug: "graphql" },
         ]
     },
     {
-        name: "Infra & Tools",
+        name: "Cloud & DevOps",
         skills: [
+            { name: "AWS", slug: "amazonaws" },
             { name: "Docker", slug: "docker" },
-            { name: "Google Cloud", slug: "googlecloud" },
-            { name: "Vercel", slug: "vercel" },
+            { name: "Kubernetes", slug: "kubernetes" },
             { name: "Git", slug: "git" },
-            { name: "GitHub", slug: "github" },
+            { name: "GitHub Actions", slug: "githubactions" },
             { name: "Linux", slug: "linux" },
-            { name: "Nginx", slug: "nginx" },
         ]
     },
     {
         name: "AI & ML",
         skills: [
-            { name: "Hugging Face", slug: "huggingface" },
-            { name: "PyTorch", slug: "pytorch" },
-            { name: "Pandas", slug: "pandas" },
+            { name: "OpenAI", slug: "openai" },
+            { name: "Anthropic", slug: "anthropic" },
+            { name: "Google Gemini", slug: "googlegemini" },
         ]
     }
 ];

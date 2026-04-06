@@ -10,8 +10,8 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Aditya Patil",
-  description: "All about me",
+  title: "Devwrat Raval",
+  description: "Full-Stack Developer based in Toronto, ON",
 };
 
 export default function RootLayout({
